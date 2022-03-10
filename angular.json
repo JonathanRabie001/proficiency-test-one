@@ -108,5 +108,8 @@
       }
     }
   },
-  "defaultProject": "proficiency-test-one"
+  "defaultProject": "proficiency-test-one",
+  "cli": {
+    "analytics": false
+  }
 }

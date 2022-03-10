@@ -2,9 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
-## Development server
+## Before running Dev Server
+Before Running Any of the Dev server for first time run `npm i` to ensure all packages are installed.
 
+
+## Development server Angular
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Development server Node
+Run `npm run server` in home directory
+
 
 ## Code scaffolding
 
@@ -25,3 +32,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Dont Have node
+Click here to setup node env [NodeJs](https://nodejs.org/en/download/).
