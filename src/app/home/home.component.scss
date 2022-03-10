@@ -1,0 +1,74 @@
+$BorderRadius: 6px;
+
+.main-form {
+    width: 90%;
+    max-width: 400px;
+    background: whitesmoke;
+    display: block;
+    margin: auto;
+    margin-top: 130px;
+    padding: 10px;
+
+    .input-container {
+        .inputLabel {
+            display: block;
+            width: 79%;
+            margin: auto;
+        }
+
+        input {
+            width: 75%;
+            height: 25px;
+            margin: 0 auto;
+            display: block;
+            border: none;
+            border-bottom: 2px solid gray;
+            border-radius: $BorderRadius;
+
+            &.hasError {
+                border: 2px solid red !important;
+            }
+        }
+
+        .error-message {
+            width: 65%;
+            display: block;
+            margin: auto;
+            background: #ff000030;
+            padding: 10px;
+            font-size: 11px;
+            color: #ff000091;
+            margin-bottom: 10px;
+        }
+    }
+
+    .form-button-container {
+        width: 80%;
+        display: block;
+        margin: auto;
+
+        button {
+            width: 48%;
+            display: inline-block;
+            margin: 0 1%;
+            border: none;
+            border-radius: $BorderRadius;
+            padding: 7px 5px;
+            color: whitesmoke;
+            cursor: pointer;
+
+            &.submit {
+                background-color: rgba(3, 105, 3, 0.637);
+            }
+
+            &.cancel {
+                background: #ff000091;
+            }
+
+            &[disabled] {
+                background-color: rgba(65, 104, 65, 0.637);
+                cursor: not-allowed;
+            }
+        }
+    }
+}

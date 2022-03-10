@@ -1,0 +1,45 @@
+<form class="main-form" [formGroup]="createUser" *ngIf="!isLoading">
+
+    <div class="input-container">
+        <span class="inputLabel">Name:<span style="color: red;">*</span></span>
+        <input [ngClass]="{'hasError': createUserFormControl['name'].errors?.['pattern']}" type="text" formControlName="name">
+        <br>
+        <span class="error-message"  *ngIf="createUserFormControl['name'].errors?.['pattern']">Your name must consist of letters only</span>
+    </div>
+    <div class="input-container">
+        <span class="inputLabel">Surname:<span style="color: red;">*</span></span>
+        <input type="text" formControlName="surname">
+        <br>
+        <span class="error-message"  *ngIf="createUserFormControl['surname'].errors?.['pattern']">Your surname must consist of letters only</span>
+    </div>
+    <div class="input-container">
+        <span class="inputLabel">ID Number:<span style="color: red;">*</span></span>
+        <input type="text" formControlName="id_no" maxlength="13">
+        <br>
+        <span class="error-message"  *ngIf="createUserFormControl['id_no'].errors?.['validId']">Please enter a vaild SA ID number!</span>
+        <span class="error-message"  *ngIf="createUserFormControl['id_no'].errors?.['minlength']">ID number to short!</span>
+        <span class="error-message"  *ngIf="createUserFormControl['id_no'].errors?.['pattern']">ID number must be a numeric value!</span>
+    </div>
+    <div class="input-container">
+        <label for="DOB" class="inputLabel">Date of Birth:<span style="color: red;">*</span></label>
+        <!-- <input type="date" id="DOB" placeholder="dd-mm-yyyy" max="2022-03-05" formControlName="date_of_birth"> -->
+        <input type="text" id="DOB" formControlName="date_of_birth">
+        <br>
+        <span class="error-message"  *ngIf="createUserFormControl['date_of_birth'].errors?.['pattern']">Incorrect date format dd/mm/yyyy</span>
+        <span class="error-message"  *ngIf="createUserFormControl['date_of_birth'].errors?.['mustMatch']">Id date of birth and date of birth entered does not match!</span>
+    </div>
+    <div class="form-button-container">
+        <button
+        class="submit" 
+        [disabled]="!createUser.valid"
+        *ngIf="!isSubmit else save"
+        (click)="onSubmit()">Submit</button>
+        <button
+        class="cancel"
+        (click)="cancel()">Cancel</button>
+
+        <ng-template  #save>
+            <button class="submit" >Saving ... </button>
+        </ng-template>
+    </div>
+</form>
